@@ -13,8 +13,9 @@ public class IOClient {
     public static RpcResponse sendRequest(String host, int port, RpcRequest request) {
         try {
             Socket socket = new Socket(host, port);
-            ObjectInputStream ois = new ObjectInputStream(socket.getInputStream());
             ObjectOutputStream oos = new ObjectOutputStream(socket.getOutputStream());
+            ObjectInputStream ois = new ObjectInputStream(socket.getInputStream());
+
 
             oos.writeObject(request);
             oos.flush();
