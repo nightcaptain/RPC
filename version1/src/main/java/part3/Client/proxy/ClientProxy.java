@@ -15,15 +15,7 @@ import java.lang.reflect.Proxy;
 public class ClientProxy implements InvocationHandler {
     //传入参数service接口的class对象，反射封装成一个request
     private RpcClient rpcClient;
-    public ClientProxy(String host, int port,int choose) {
-        switch (choose) {
-            case 1:
-                rpcClient = new SimpleSocketRpcClient(host, port);
-                break;
-            case 2:
-                rpcClient = new NettyRpcClient(host, port);
-        }
-    }
+    public ClientProxy() { rpcClient = new NettyRpcClient(); }
 
     //jdk动态代理
     public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
