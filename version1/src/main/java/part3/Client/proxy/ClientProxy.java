@@ -1,12 +1,11 @@
-package part2.Client.proxy;
+package part3.Client.proxy;
 
 import lombok.AllArgsConstructor;
-import part2.Client.IOClient;
-import part2.Client.rpcClient.RpcClient;
-import part2.common.Message.RpcRequest;
-import part2.common.Message.RpcResponse;
-import part2.Client.rpcClient.impl.NettyRpcClient;
-import part2.Client.rpcClient.impl.SimpleSocketRpcClient;
+import part3.Client.rpcClient.RpcClient;
+import part3.Client.rpcClient.impl.NettyRpcClient;
+import part3.Client.rpcClient.impl.SimpleSocketRpcClient;
+import part3.common.Message.RpcRequest;
+import part3.common.Message.RpcResponse;
 
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;

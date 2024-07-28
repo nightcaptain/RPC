@@ -1,16 +1,13 @@
-package part2.Server.server.impl;
+package part3.Server.server.impl;
 
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.ChannelFuture;
-import io.netty.channel.ChannelInitializer;
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.nio.NioServerSocketChannel;
-
 import lombok.AllArgsConstructor;
-
-import part2.Server.netty.nettyInitializer.NettyServerInitializer;
-import part2.Server.provider.ServiceProvider;
-import part2.Server.server.RpcServer;
+import part3.Server.netty.nettyInitializer.NettyServerInitializer;
+import part3.Server.provider.ServiceProvider;
+import part3.Server.server.RpcServer;
 
 @AllArgsConstructor
 public class NettyRPCRPCServer implements RpcServer {

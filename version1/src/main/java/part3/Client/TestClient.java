@@ -1,8 +1,8 @@
-package part2.Client;
+package part3.Client;
 
-import part2.Client.proxy.ClientProxy;
-import part2.common.polo.User;
-import part2.common.service.UserService;
+import part3.Client.proxy.ClientProxy;
+import part3.common.polo.User;
+import part3.common.service.UserService;
 
 public class TestClient {
     public static void main(String[] args) {
