@@ -17,25 +17,28 @@ import part1.common.Message.RpcResponse;
 import java.net.InetSocketAddress;
 
 public class NettyRpcClient implements RpcClient {
-    private serviceCenter serviceCenter;
+
     private static final Bootstrap bootstrap;
     private static final EventLoopGroup eventLoopGroup;
+
+    private serviceCenter serviceCenter;
     public NettyRpcClient() { this.serviceCenter = new ZKServiceCenter(); }
     //netty客户端初始化
     static {
         eventLoopGroup = new NioEventLoopGroup();
         bootstrap = new Bootstrap();
         bootstrap.group(eventLoopGroup).channel(NioSocketChannel.class)
-                //NettyClientInitializer这里 配置netty对消息的处理机制
                 .handler(new NettyClientInitialzer());
+        //NettyClientInitializer这里 配置netty对消息的处理机制
     }
     @Override
     public RpcResponse sendRequest(RpcRequest request) {
-        try {
+
             //从注册中心获取host，port
             InetSocketAddress address = serviceCenter.serviceDiscovery(request.getInterfaceName());
             String host = address.getHostName();
             int port = address.getPort();
+        try {
             //创建channelFuture对象，代表这一个操作事件，sync方法表示堵塞直到connect完成
             ChannelFuture channelFuture = bootstrap.connect(host, port).sync();
             //channel表示一个连接的单位，类似socket

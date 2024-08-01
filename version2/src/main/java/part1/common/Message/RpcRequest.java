@@ -2,11 +2,15 @@ package part1.common.Message;
 
 //通过注解来减少样板代码，提高开发效率
 
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
 
+@NoArgsConstructor
+@AllArgsConstructor
 @Data //为类生成所有字段的 getter 和 setter 方法，equals、hashCode 以及 toString 方法
 @Builder //支持使用构建器模式创建对象
 public class RpcRequest implements Serializable{

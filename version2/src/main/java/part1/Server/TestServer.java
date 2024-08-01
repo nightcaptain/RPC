@@ -6,7 +6,9 @@ import part1.Server.server.impl.NettyRPCRPCServer;
 import part1.common.service.Impl.UserServiceImpl;
 import part1.common.service.UserService;
 
-public class TestServer {
+public class
+
+TestServer {
     public static void main(String[] args) {
         UserService userService = new UserServiceImpl();
 

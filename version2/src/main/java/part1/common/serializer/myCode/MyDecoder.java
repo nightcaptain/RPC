@@ -15,7 +15,8 @@ public class MyDecoder extends ByteToMessageDecoder {
         //1.读取消息类型
         short messageType = in.readShort();
         //目前只支持request和response方法
-        if(messageType != MessageType.REQUEST.getCode() && messageType != MessageType.RESPONSE.getCode()){
+        if(messageType != MessageType.REQUEST.getCode() &&
+                messageType != MessageType.RESPONSE.getCode()){
             System.out.println("暂不支持此种数据");
             return;
         }

@@ -39,6 +39,8 @@ public class JsonSerializer implements Serializer {
             case 1:
                 RpcResponse response = JSON.parseObject(bytes, RpcResponse.class);
                 Class<?> dataType = response.getDataType();
+                //System.out.println("dataType: " + dataType);
+                //System.out.println("response" + response);
                 //判断转化后的response对象中的data类型是否正确
                 if (! dataType.isAssignableFrom(response.getData().getClass())) {
                     response.setData(JSONObject.toJavaObject((JSONObject) response.getData(),dataType));
