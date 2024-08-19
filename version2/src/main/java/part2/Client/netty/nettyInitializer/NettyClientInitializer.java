@@ -9,11 +9,6 @@ import part2.common.serializer.myCode.MyDecoder;
 import part2.common.serializer.myCode.MyEncoder;
 import part2.common.serializer.mySerializer.JsonSerializer;
 
-/**
- * @author wxx
- * @version 1.0
- * @create 2024/2/26 17:26
- */
 public class NettyClientInitializer extends ChannelInitializer<SocketChannel> {
     @Override
     protected void initChannel(SocketChannel ch) throws Exception {
